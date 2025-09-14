@@ -1,0 +1,77 @@
+/* Image carousel inside course-details */
+.details-flex {
+  display: flex;              /* horizontal layout */
+  align-items: flex-start;    /* align top */
+  gap: 30px;                  /* space between list and carousel */
+  flex-wrap: wrap;            /* wrap on smaller screens */
+}
+
+.course-bullets {
+  list-style-type: disc;
+  padding-left: 20px;
+  flex: 1;                    /* take available space */
+  min-width: 200px;           /* prevent collapsing too small */
+}
+
+.carousel-container {
+  flex-shrink: 0;   /* prevent shrinking */
+  width: 300px;     /* fixed width */
+  margin-left: 800px; /* push to right */
+  position: relative; /* for absolute positioning of arrows inside */
+  margin-bottom: -200px;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.2rem;
+  width: 50px;
+}
+
+.carousel-btn.left {
+  left: -90px;  /* just outside image */
+}
+
+.carousel-btn.right {
+  right: -90px; /* just outside image */
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0,0,0,0.9);
+}
+
+/* Dots */
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+  background-color: #127951;
+}

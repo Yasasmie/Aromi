@@ -1,0 +1,367 @@
+/* Main container */
+.home-content {
+  display: flex;
+  flex-direction: column;   /* stack images + heading vertically */
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* Image row */
+.home-image {
+  display: flex;
+  flex-wrap: wrap;          /* wrap on smaller screens */
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 25px;      /* space between images and heading */
+}
+
+/* Images styling */
+.home-image img {
+  width: 100%;
+  max-width: 250px; /* Maximum width for larger screens */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: shuffle 6s infinite ease-in-out; /* 🎬 Animation */
+}
+
+/* Hover effect on images */
+.home-image img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframes for shuffle animation */
+@keyframes shuffle {
+  0%   { transform: scale(1) rotate(0deg); }
+  25%  { transform: scale(1.05) rotate(2deg); }
+  50%  { transform: scale(1) rotate(-2deg); }
+  75%  { transform: scale(1.05) rotate(1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .home-image {
+    flex-direction: row; /* Maintain row layout */
+  }
+
+  .home-image img {
+    max-width: 45%; /* Show two images side by side */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Hide images after the first two */
+  .home-image img:nth-child(n+3) {
+    display: none; /* Hide images starting from the third */
+  }
+
+  /* Center headings */
+  h1, h2 {
+    text-align: center;
+    margin: 10px 0; /* Add some margin for spacing */
+  }
+}
+
+
+/* Heading styling */
+.home-content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4a2c2a;           /* dark fashion-like color */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-top: 3px solid #4a2c2a;
+  padding-top: 15px;
+}
+
+hr {
+  border: none;          /* Remove default border */
+  height: 4px;           /* Thickness */
+  background-color: #693232; /* Color */
+}
+
+.aromi-about {
+  position: relative; /* Make parent container relative for absolute positioning */
+  text-align: center;
+  background-color: rgb(255, 235, 205);
+  padding: 5px;
+}
+
+.image-wrapper {
+  position: relative;
+  display: block;  /* Full width */
+  width: 100vw;    /* Full viewport width */
+  max-width: 100%;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.aromi-about .about-img {
+  width: 100%;      /* Take full viewport width */
+  height: auto;     /* Maintain aspect ratio */
+  display: block;
+  object-fit: cover;
+  border-radius: 0; /* Remove rounded corners if any to fit edge */
+  opacity: 0.7;
+}
+
+.overlay-img {
+  position: absolute;
+  top: 75px;          /* Align to top */
+  left: 20px;       /* Align to right */
+  max-width: 550px; /* Width as needed */
+  height: auto;     /* Maintain aspect ratio */
+  z-index: 10;      /* Above background */
+}
+
+.inner-box {
+  position: absolute;
+  bottom: 100px;
+  left: 90px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 15px;
+  border-radius: 8px;
+  pointer-events: auto;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  z-index: 20; /* Above overlay image */
+}
+
+.inner-box p {
+  padding: 10px;
+  font-size: 20px; /* Base font size */
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.read-more::after {
+  content: '⟶';  /* A longer arrow character */
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 1.8em;  /* Increase arrow size */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect on both text and arrow */
+.read-more:hover {
+  color: #b35a47;  /* change text color on hover */
+}
+
+.read-more:hover::after {
+  transform: translateX(6px);  /* move arrow slightly on hover */
+  color: #b35a47;  /* match arrow color with text */
+}
+
+.right-corner-box {
+  position: absolute;
+  top: 250px;
+  right: 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 25px;
+  border-radius: 12px;
+  width: 750px;
+  height: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #0c0b0b;
+  font-weight: bold;
+  text-align: left;
+  z-index: 15; /* Above about-img */
+}
+
+.right-corner-box p {
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 25px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .about-img {
+    height: auto; /* Allow it to grow with content */
+    min-height: 700px; /* Set a minimum height for better visibility */
+  }
+
+  .overlay-img {
+    display: none;
+  }
+
+  .inner-box {
+    left: 5%; /* Adjust position */
+    right: 5%; /* Adjust position */
+    max-width: 30%; /* Full width on small screens */
+    padding: 10px; /* Reduce padding */
+    margin-bottom: 20px;
+  }
+
+  .inner-box h1{
+    font-size: 20px;
+  }
+
+  .inner-box p {
+    font-size: 10px; /* Smaller font size for mobile */
+  }
+
+  .inner-box .read-more{
+    font-size: 15px;
+  }
+
+.right-corner-box {
+  position: absolute; /* Change to absolute for precise positioning */
+  top: 250px; /* Adjust to position it above the about image */
+  right: 20px; /* Adjust spacing from the right */
+  width: 60%; /* Width on smaller screens */
+  margin: 0; /* Remove margin to avoid unexpected spacing */
+  padding: 0px; /* Adjust padding */
+  z-index: 15; /* Ensure it's above other elements */
+}
+
+.right-corner-box p {
+  font-size: 15px; /* Smaller font size for mobile */
+}
+}
+
+
+.course-list-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;                 /* keep some gap */
+  margin: 30px auto;
+  max-width: 1800px;         /* allow wider layout */
+  position: relative;
+}
+
+.side-image {
+  width: 100%;       /* make image responsive */
+  max-width: 400px;  /* optional max width */
+  height: auto;
+  border-radius: 16px;
+  margin: 20px 0;    /* space above and below */
+  transition: transform 0.3s ease;
+}
+
+.side-image:hover {
+  transform: scale(1.05);
+}
+
+
+.content {
+  flex: 2;
+  list-style: none;
+  padding: 0;
+  margin: 0 20px;
+}
+
+.content .title {
+  position: relative;   /* ✅ make dropdown attach under it */
+  font-size: 20px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  background: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.content .title:hover {
+  background: #8f4949;
+}
+
+/* 📱 Responsive */
+@media (max-width: 1100px) {
+
+  .course-list-wrapper {
+    flex-direction: row;
+  }
+
+  .side-image {
+    width: 50%;
+    max-width: 500px;   /* smaller on mobile */
+    transform: none !important;
+    height: auto;
+  }
+
+  .side-image-right{
+    display: none;
+  }
+
+  .content {
+    flex: 1;           /* Allow content to use remaining space */
+    max-width: 50%;
+  }
+
+  .content .title{
+    font-size: 15px;
+    padding: 10px 10px;
+  }
+}
+
+.course-list-container {
+  display: flex;
+  flex-direction: column;  /* Stack lists vertically */
+  gap: 30px;               /* Space between lists */
+  align-items: center;     /* Center lists */
+}
+
+.course-list-container .content {
+  width: 100%;
+  max-width: 800px;       /* Optional: limit width */
+  padding: 0;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: absolute;         /* appears below parent */
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+  min-width: 220px;           /* width of dropdown */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+/* Dropdown items */
+.dropdown li {
+  padding: 12px 18px;
+  font-size: 18px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Last item no border */
+.dropdown li:last-child {
+  border-bottom: none;
+}
+
+/* Hover effect */
+.dropdown li:hover {
+  background: #8f4949;    /* same hover as your main titles */
+  color: #fff;
+}
