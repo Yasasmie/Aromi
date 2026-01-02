@@ -1,0 +1,231 @@
+.admin-container {
+  padding: 2rem;
+  max-width: 1500px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+}
+
+.admin-table th, .admin-table td {
+  border: 1px solid #ccc;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #f4f4f4;
+}
+
+.admin-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.admin-table input {
+  width: 95%;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 6px; /* space between buttons */
+  align-items: center;
+}
+
+
+.btn-edit {
+  background-color: #4CAF50; /* red */
+  color: white;
+  margin-right: 6px;
+  padding: 2px 6px;       /* smaller padding */
+  font-size: 15px;         /* smaller font */
+  cursor: pointer;
+  border-radius: 3px;      /* slightly smaller radius */
+  border: none;
+  outline: none;
+  min-width: 40px;         /* optional fixed min width */
+  height: 30px;            /* consistent height */
+  display: inline-flex;    /* to center text vertically */
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.btn-delete {
+  background-color: #f44336; /* red */
+  color: white;
+  margin-right: 6px;
+  padding: 2px 6px;       /* smaller padding */
+  font-size: 15px;         /* smaller font */
+  cursor: pointer;
+  border-radius: 3px;      /* slightly smaller radius */
+  border: none;
+  outline: none;
+  min-width: 40px;         /* optional fixed min width */
+  height: 30px;            /* consistent height */
+  display: inline-flex;    /* to center text vertically */
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+
+.btn-accept {
+  background-color: #2196F3; /* blue */
+  color: white;
+  margin-right: 6px;
+  padding: 2px 6px;       /* smaller padding */
+  font-size: 15px;         /* smaller font */
+  cursor: pointer;
+  border-radius: 3px;      /* slightly smaller radius */
+  border: none;
+  outline: none;
+  min-width: 50px;         /* optional fixed min width */
+  height: 30px;            /* consistent height */
+  display: inline-flex;    /* to center text vertically */
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+
+.btn-cancel {
+  background-color: #e0e0e0;
+  color: #333;
+  margin-right: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.error-message {
+  color: red;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Table & Buttons remain the same */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.modal-buttons button {
+  margin: 0 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: #2196F3; /* blue */
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-edit {
+  background-color: #4CAF50; /* green */
+  color: white;
+  margin-right: 6px;
+}
+
+.btn-delete {
+  background-color: #f44336; /* red */
+  color: white;
+  margin-right: 6px;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pagination-controls button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 200px;
+}
+
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination-controls span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  user-select: none;
+}
+
+.course-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.course-link {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.course-link:hover {
+  background-color: #1769aa;
+}

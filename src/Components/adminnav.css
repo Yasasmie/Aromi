@@ -1,0 +1,95 @@
+/* src/Components/adminnav.css */
+
+.nav {
+  background-color: #693232;   
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.nav h1 {
+  font-size: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.nav-title ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-title li a {
+  text-decoration: none;   
+  color: white;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  padding: 5px 0;
+  display: inline-block;
+}
+
+.nav-title li a:hover {
+  color: #ffd369;  
+}
+
+.nav-title li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #ffd369;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-title li a:hover::after {
+  width: 100%;
+}
+
+/* Add top padding to body so content isn't hidden behind navbar */
+body {
+  padding-top: 110px; /* sum of .nav + .nav-title height */
+}
+
+
+
+
+/* Responsive - stack for small screens */
+@media (max-width: 600px) {
+  .nav-title {
+    flex-direction: column;
+    align-items: stretch;
+    position: static;
+    height: auto;
+    padding: 1rem 0;
+  }
+  .nav-title ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .nav-title ul li,
+  .nav-title ul li:last-child {
+    margin-left: 0;
+    width: 100%;
+  }
+  .nav-title ul li a,
+  .logout-btn {
+    width: 100%;
+    text-align: left;
+    margin-right: 0;
+  }
+}

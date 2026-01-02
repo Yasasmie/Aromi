@@ -1,0 +1,357 @@
+.course-page {
+  background-color: rgb(255, 235, 205);
+  min-height: 100vh;         /* Make sure it covers the full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Course content styling */
+.course {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.course h2 {
+  font-size: 2rem;
+  color: #4a2c2a; 
+  text-decoration: underline;
+}
+
+.rules-box {
+  width: 350px;              /* Fixed width for larger screens */
+  text-align: left;
+  margin: 30px 0 30px 30px;  /* Push away from edges (top/right/bottom/left) */
+  background-color: #fff8f0;
+  border-left: 6px solid #b5651d;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  float: left;               /* Force it to stick left */
+}
+
+.rules-box h2 {
+  font-size: 1.5rem;
+  color: #4a2c2a;
+  margin-bottom: 15px;
+}
+
+.rules-box ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.rules-box li {
+  margin-bottom: 10px;
+  font-size: 1rem; /* Base font size */
+  color: #333;
+  line-height: 1.6;
+}
+
+
+.poster-and-details {
+  display: flex;
+  flex-direction: column;  /* Stack poster + course details vertically */
+  gap: 30px;               /* Space between poster and course details */
+  flex: 1;                 /* Take remaining width next to rules-box */
+}
+
+
+.course-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;              /* space between left and right */
+  margin: 40px 30px;
+}
+
+.poster-box {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.poster-box h2 {
+  font-size: 1.6rem;
+  color: #4a2c2a;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Flex container for image + text */
+.poster-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Left side image */
+.poster-img {
+  width: 400px;         /* adjust as needed */
+  border-radius: 10px;
+  flex-shrink: 0;       /* prevent shrinking */
+}
+
+/* Right side text */
+.poster-text {
+  flex: 1;
+  text-align: left;
+}
+
+.poster-text p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.video-container {
+  position: relative;
+  width: 500px;   /* Fixed width */
+  height: 280px;  /* Fixed height (16:9 ratio approx) */
+  overflow: hidden;
+  background: #000; 
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* optional shadow */
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #127951; /* fashion-like accent */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px;
+}
+
+.download-button:hover {
+  background-color: #141414;
+}
+
+
+.course-details {
+  width: 100%;           /* full width below poster */
+  margin-top: 30px;      /* space between poster and details */
+  clear: both;           /* ensures it drops below floated elements */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Heading inside course-details */
+.course-details h2 {
+  font-size: 1.8rem;
+  color: #4a2c2a;
+  margin-bottom: 20px;
+}
+
+.course-details p{
+  width: 700px;
+  text-align: center;
+  font-size: 20px;
+}
+
+/* Bullet points */
+.course-bullets {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.course-bullets li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Image carousel inside course-details */
+.details-flex {
+  display: flex;              /* horizontal layout */
+  align-items: flex-start;    /* align top */
+  gap: 30px;                  /* space between list and carousel */
+  flex-wrap: wrap;            /* wrap on smaller screens */
+}
+
+.course-bullets {
+  list-style-type: disc;
+  padding-left: 20px;
+  flex: 1;                    /* take available space */
+  min-width: 200px;           /* prevent collapsing too small */
+}
+
+.carousel-container {
+  flex-shrink: 0;   /* prevent shrinking */
+  width: 300px;     /* fixed width */
+  margin-left: 800px; /* push to right */
+  position: relative; /* for absolute positioning of arrows inside */
+  margin-bottom: -200px;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.2rem;
+  width: 50px;
+}
+
+.carousel-btn.left {
+  left: -90px;  /* just outside image */
+}
+
+.carousel-btn.right {
+  right: -90px; /* just outside image */
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0,0,0,0.9);
+}
+
+/* Dots */
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+  background-color: #127951;
+}
+
+
+/* YouTube video */
+.video-container {
+  margin-top: 20px; /* spacing from carousel or content above */
+}
+
+@media (max-width: 768px) {
+  .rules-box {
+    width: 90%;              /* Full width on small screens */
+    margin: 20px auto;       /* Center on mobile */
+    float: none;             /* Remove float to allow centering */
+    padding: 15px;           /* Adjust padding */
+  }
+
+  .poster-details {
+    display: flex;           
+    flex-direction: column;  /* Stack vertically */
+    gap: 30px;               
+    width: 100%;             
+    margin: 0 auto;          
+    align-items: center;     /* Center children horizontally */
+  }
+
+  .poster-img {
+    width: 40%;
+  }
+
+  .poster-text p {
+    font-size: 15px; 
+  }
+
+  .video-container {
+    width: 90%;              /* Responsive width inside poster-details */
+    max-width: 500px;        /* Limit max width like large screen */
+    height: auto;            /* Let height adjust */
+    aspect-ratio: 16 / 9;    /* Keep 16:9 aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Keep shadow */
+    background: #000;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+  }
+
+  .course-section {
+    flex-direction: column;  
+    align-items: center;      
+    gap: 20px;               
+  }
+
+  .course-details p{
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .carousel-container{
+     flex-shrink: 0;   /* prevent shrinking */
+  width: 300px;     /* fixed width */
+  margin-left: 250px; /* push to right */
+  position: relative; /* for absolute positioning of arrows inside */
+  margin-bottom: -10px;
+  }
+
+ .carousel-img {
+  width: 70%;
+  max-height: 200px; /* Maximum height */
+  height: auto; /* Allow height to adjust */
+  object-fit: cover; /* Or 'contain' based on your preference */
+  border-radius: 8px;
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 40%; /* Adjusted to bring buttons closer */
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.2rem;
+  width: 50px;
+}
+.carousel-btn.left {
+  left: -50px;  /* just outside image */
+}
+
+.carousel-btn.right {
+  right: 35px; /* just outside image */
+}
+}
+

@@ -1,0 +1,153 @@
+body, html {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Container for the dropdown */
+div[style*="text-align: center"] {
+  padding: 20px;
+}
+
+/* Sleeve section styling */
+section {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+section p {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.image-gallery {
+  display: grid;
+  gap: 20px;
+  padding-bottom: 10px;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns on desktop */
+}
+
+.image-gallery img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  height: auto;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.07);
+}
+
+/* Sleeve selection container */
+.sleeve-selection {
+  position: sticky;
+  top: 100px; /* Adjust to your NavBar height */
+  background-color: #2c2b2b; /* White background */
+  padding: 20px 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000; /* Position above other content */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Sleeve selection title */
+.sleeve-selection h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Dropdown select */
+.selection {
+  width: 260px;
+  padding: 10px 18px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid #4a2c2a;
+  background-color: #fff8f5;
+  color: #4a2c2a;
+  cursor: pointer;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%234a2c2a' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 20px;
+  transition: border-color 0.3s ease;
+}
+
+/* Dropdown focus and hover */
+.selection:hover,
+.selection:focus {
+  border-color: #805040;
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .sleeve-selection {
+    padding: 15px 20px;
+    top: 120px;
+  }
+
+  .sleeve-selection h1 {
+    font-size: 22px;
+  }
+
+  .selection {
+    width: 100%;
+    font-size: 16px;
+    padding: 8px 12px;
+    background-position: right 15px center;
+  }
+}
+
+/* Responsive mobile and tablet */
+@media (max-width: 768px) {
+  div[style*="overflowX: 'auto'"] img {
+    width: 140px;
+  }
+  
+  section h2 {
+    font-size: 22px;
+  }
+  
+  section p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  div[style*="overflowX: 'auto'"] img {
+    width: 100px;
+  }
+  
+  section h2 {
+    font-size: 18px;
+  }
+  
+  section p {
+    font-size: 12px;
+    padding: 0 5px;
+  }
+}

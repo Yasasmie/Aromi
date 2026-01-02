@@ -1,0 +1,352 @@
+/* General Page Layout */
+.advertisements-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-area {
+    flex-grow: 1;
+    padding: 40px 20px;
+    max-width: 1200px; /* Max content width */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Page Header/Title */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-bottom: 2px solid #e4a4a4;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* 🖼️ Posters Grid Layout (Responsive) */
+.posters-grid {
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+/* 🖥️ Desktop & Laptop Layout (3 Columns) */
+@media (min-width: 768px) {
+    .posters-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 📱 Mobile Layout (1 Column) */
+@media (max-width: 767px) {
+    .posters-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Individual Poster Card Styling (Kept untouched) */
+.poster-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.poster-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.poster-image-wrapper {
+    overflow: hidden;
+    height: 300px;
+}
+
+.poster-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.poster-card:hover .poster-image {
+    transform: scale(1.05);
+}
+
+.poster-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.poster-title {
+    font-size: 1.4rem;
+    color: #791a1a;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.poster-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    /* --- EDITED: Removed text truncation to show full text --- */
+    display: block; /* Ensure it behaves like a standard block element */
+    overflow: visible;
+    /* Removed: -webkit-line-clamp: 3; */
+    /* Removed: -webkit-box-orient: vertical; */
+    /* Removed: text-overflow: ellipsis; */
+}
+
+/* ---------------------------------------------------- */
+/* --- REGISTRATION FORM STYLES (Kept as previously finalized) --- */
+/* ---------------------------------------------------- */
+
+.registration-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    border-bottom: 3px solid #791a1a;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* Participation Checkbox Toggle */
+.participate-toggle {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.participate-label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #791a1a;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.participate-label:hover {
+    color: #5d1313;
+}
+
+
+.participate-label input[type="checkbox"] {
+    margin-right: 15px;
+    width: 28px;
+    height: 28px;
+    transform: scale(1);
+    accent-color: #791a1a;
+    border: 2px solid #791a1a;
+    border-radius: 4px;
+}
+
+/* Main Form Layout */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-selection-group {
+    display: flex;
+    gap: 30px;
+}
+
+.form-group {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fcfcfc;
+    transition: box-shadow 0.3s;
+}
+
+.form-group:hover {
+    box-shadow: 0 0 10px rgba(121, 26, 26, 0.1);
+}
+
+.form-subtitle {
+    font-size: 1.4rem;
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #f0f0f0;
+    text-align: left;
+}
+
+/* Checkbox and Price Styling */
+.checkbox-label {
+    margin-bottom: 5px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    text-align: left;
+}
+
+.checkbox-label:hover {
+    background-color: #f0f0f0;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 15px;
+    width: 16px;
+    height: 16px;
+    transform: scale(1);
+    accent-color: #791a1a;
+    border: 1px solid #791a1a;
+    border-radius: 3px;
+    margin-left: 0;
+    order: -1;
+}
+
+.item-price {
+    font-weight: bold;
+    color: #28a745;
+    flex-shrink: 0;
+}
+
+.form-divider {
+    border-top: 1px dashed #ccc;
+    margin: 10px 0;
+}
+
+/* Total Value Display */
+.total-value-box {
+    text-align: right;
+    font-size: 1.6rem;
+    padding: 15px;
+    border-top: 3px double #791a1a;
+    background-color: #fff8e1;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.total-amount {
+    color: #d9534f;
+    font-weight: 800;
+    margin-left: 15px;
+}
+
+/* Personal Details Input Fields */
+.personal-details-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.personal-details-group input[type="text"],
+.personal-details-group input[type="email"],
+.personal-details-group input[type="tel"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.personal-details-group input:focus {
+    border-color: #791a1a;
+    box-shadow: 0 0 5px rgba(121, 26, 26, 0.3);
+    outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+    padding: 15px;
+    background-color: #791a1a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #5d1313;
+    transform: translateY(-2px);
+}
+
+/* --- Responsiveness for Form --- */
+@media (max-width: 767px) {
+    .form-selection-group {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+/* ---------------------------------------------------- */
+/* --- NEW FADE SLIDESHOW STYLES --- */
+/* ---------------------------------------------------- */
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Aligned with .poster-image-wrapper */
+    overflow: hidden;
+    background: #f7f7f7;
+    border-radius: 12px;
+}
+
+.slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    opacity: 0; /* Default hidden state */
+    transition: opacity 1.5s ease-in-out; /* The fade transition duration */
+}
+
+.slideshow-image.active {
+    opacity: 1; /* Visible state */
+}
+
+.slideshow-error {
+    text-align: center;
+    padding: 50px 10px;
+    color: #cc0000;
+    font-weight: bold;
+}
+
+/* Removed old .carousel-container and .carousel-btn styles */

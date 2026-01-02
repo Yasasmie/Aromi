@@ -1,0 +1,100 @@
+/* Reset margin and padding for body and root container */
+body {
+  background-color: rgb(255, 235, 205);
+  min-height: 100vh;         /* Make sure it covers the full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove margin or padding from NavBar container */
+nav, .navbar {
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.banner .img {
+  width: 100%;
+  height: auto;  /* maintain aspect ratio */
+  display: block;
+  object-fit: contain; /* ensures full image fits inside without cropping */
+}
+
+
+/* Optional: Ensure no spacing inside the parent container */
+div {
+  margin: 0;
+  padding: 0;
+}
+
+.design-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4a2c2a;
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin: 40px 0;
+}
+
+.design-card {
+  background: #f7eaea;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.images-row img {
+  width: 500px;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.design-card h3 {
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: #5e2b39;
+}
+
+.design-card p {
+  font-size: 1rem;
+  color: #4d4d4d;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+.design-btn {
+  background: #1b7075;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin: 40px 0;
+  padding-left: 42px;   /* add desired space on left */
+  padding-right: 42px;  /* add desired space on right */
+  box-sizing: border-box;
+}
